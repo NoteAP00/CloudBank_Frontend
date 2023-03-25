@@ -69,7 +69,7 @@ export default function Home() {
         <div className={styles.footer}>
           <div style={{ paddingLeft: "100px", paddingTop: "50px" }}>
             <div style={{ paddingBottom: "10px" }}>Facbook: hkm@Webbank.com</div>
-            <div>line: hkm@Webank.com</div>
+            <div>line: hkm@Webbank.com</div>
           </div>
           <div style={{ paddingRight: "100px", paddingTop: "50px" }}>
             Contact: 09-9999-999
