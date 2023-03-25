@@ -23,59 +23,39 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className={styles.main}>
+        <div className={styles.menu}>
           <div className={styles.top} style={{ fontSize: "30px" }}>
             <div>Webbank</div>
           </div>
-        </div>
+         </div>
         <div className={styles.card}>
           <Card style={{ width: "30rem" }}>
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }}>Login</Card.Title>
+              <Card.Title style={{ textAlign: "center" }}>โอนเงิน</Card.Title>
               <div>
-                <Form.Label htmlFor="basic-url">Username</Form.Label>
+                <Form.Label htmlFor="basic-url">เลขบัญชีผู้รับ</Form.Label>
                 <InputGroup className="mb-3">
                   <Form.Control
                     id="basic-url"
                     aria-describedby="basic-addon3"
                   />
                 </InputGroup>
-                <Form.Label htmlFor="basic-url">Password</Form.Label>
-                <InputGroup className="mb-4">
+                <Form.Label htmlFor="basic-url">จำนวนเงินที่ต้องการโอน</Form.Label>
+                <InputGroup className="mb-3">
                   <Form.Control
                     id="basic-url"
                     aria-describedby="basic-addon3"
                   />
                 </InputGroup>
+            
               </div>
               <Button href="/menu" variant="success" style={{ width: "100%" }}>
                 Confirm
               </Button>
-              <div
-                style={{
-                  textAlign: "right",
-                  paddingTop: "10px",
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  router.push("/register");
-                }}
-              >
-                Register
-              </div>
             </Card.Body>
           </Card>
         </div>
-        <div className={styles.footer}>
-          <div style={{ paddingLeft: "100px", paddingTop: "50px" }}>
-            <div style={{ paddingBottom: "10px" }}>Facbook: hkm@Webbank.com</div>
-            <div>line: hkm@Webank.com</div>
-          </div>
-          <div style={{ paddingRight: "100px", paddingTop: "50px" }}>
-            Contact: 09-9999-999
-          </div>
-        </div>
-      </main>
+    </main>
     </div>
   );
 }
