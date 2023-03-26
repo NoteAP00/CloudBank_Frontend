@@ -7,9 +7,9 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { useRouter } from "next/router";
 import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar"; 
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import Navbar from "react-bootstrap/Navbar";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,46 +28,54 @@ export default function Home() {
           <div className={styles.top} style={{ fontSize: "30px" }}>
             <div>Webbank</div>
           </div>
-          <div style={{justifyItem:"right"}}>
-          <DropdownButton
-      align="end"
-      title="Username"
-      id="dropdown-menu-align-end"
-      variant="success"
-    >
-      <Dropdown.Item eventKey="1"
-      style={{
-        cursor: "pointer"
-      }}
-      onClick={() => {
-        router.push("/menu");
-      }} >Menu</Dropdown.Item>
-      
-      <Dropdown.Divider />
-      <Dropdown.Item eventKey="4"
-      style={{
-        cursor: "pointer"
-      }}
-      onClick={() => {
-        router.push("/");
-      }} 
-      >Sign Out</Dropdown.Item>
-      </DropdownButton>
-            </div>
-         </div>
+          <div style={{ justifyItem: "right" }}>
+            <DropdownButton
+              align="end"
+              title="Username"
+              id="dropdown-menu-align-end"
+              variant="success"
+            >
+              <Dropdown.Item
+                eventKey="1"
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  router.push("/menu");
+                }}
+              >
+                Menu
+              </Dropdown.Item>
+
+              <Dropdown.Divider />
+              <Dropdown.Item
+                eventKey="4"
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  router.push("/");
+                }}
+              >
+                Sign Out
+              </Dropdown.Item>
+            </DropdownButton>
+          </div>
+        </div>
         <div className={styles.card}>
           <Card style={{ width: "30rem" }}>
             <Card.Body>
               <Card.Title style={{ textAlign: "center" }}>ฝากเงิน</Card.Title>
               <div>
-                <Form.Label htmlFor="basic-url">จำนวนเงินที่ต้องการฝาก</Form.Label>
+                <Form.Label htmlFor="basic-url">
+                  จำนวนเงินที่ต้องการฝาก
+                </Form.Label>
                 <InputGroup className="mb-3">
                   <Form.Control
                     id="basic-url"
                     aria-describedby="basic-addon3"
                   />
                 </InputGroup>
-            
               </div>
               <Button href="/menu" variant="success" style={{ width: "100%" }}>
                 Confirm
@@ -75,7 +83,7 @@ export default function Home() {
             </Card.Body>
           </Card>
         </div>
-    </main>
+      </main>
     </div>
   );
 }
