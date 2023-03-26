@@ -1,6 +1,6 @@
 .main{
-  background-color: rgb(105, 211, 102);
-  color: black;
+  background-color: #2A3B42;
+  color: #45C2B2;
   text-align: center;
   height: 70px;
   display: flex;
@@ -26,6 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .nsavsignout{
   padding-right: 10px;
@@ -39,8 +40,8 @@
 }
 
 .menu{
-  background-color: rgb(105, 211, 102);
-  color: black;
+  background-color: #2A3B42;
+  color: #45C2B2;
   text-align: center;
   height: 70px;
   display: flex;

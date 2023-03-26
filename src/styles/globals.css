@@ -12,11 +12,17 @@ body {
 }
 
 body{
-  background-image: url("/lala.png");
+  background-image: url("/12.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  background-position: center center;
+  justify-content: center;
+  align-items: center;
+
 }
+
+
 
  
 

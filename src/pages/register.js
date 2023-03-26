@@ -15,12 +15,13 @@ export default function register() {
   return (
     <div>
       <div>
-        <Navbar style={{ backgroundColor: "rgb(105, 211, 102)" }}>
+        <Navbar style={{ backgroundColor:"#2A3B42" }}>
           <Navbar.Brand
             style={{
               paddingLeft: "50px",
               fontSize: "30px",
               fontWeight: "bold",
+              color: "#45C2B2"
             }}
             href="#home"
           >
