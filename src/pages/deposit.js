@@ -8,7 +8,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { useRouter } from "next/router";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar"; 
-
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,32 @@ export default function Home() {
           <div className={styles.top} style={{ fontSize: "30px" }}>
             <div>Webbank</div>
           </div>
+          <div style={{justifyItem:"right"}}>
+          <DropdownButton
+      align="end"
+      title="Username"
+      id="dropdown-menu-align-end"
+      variant="success"
+    >
+      <Dropdown.Item eventKey="1"
+      style={{
+        cursor: "pointer"
+      }}
+      onClick={() => {
+        router.push("/menu");
+      }} >Menu</Dropdown.Item>
+      
+      <Dropdown.Divider />
+      <Dropdown.Item eventKey="4"
+      style={{
+        cursor: "pointer"
+      }}
+      onClick={() => {
+        router.push("/");
+      }} 
+      >Sign Out</Dropdown.Item>
+      </DropdownButton>
+            </div>
          </div>
         <div className={styles.card}>
           <Card style={{ width: "30rem" }}>

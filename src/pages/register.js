@@ -8,6 +8,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { useRouter } from "next/router";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 export default function register() {
   const router = useRouter();
   return (
@@ -45,6 +47,13 @@ export default function register() {
             <Card.Body>
               <Card.Title style={{ textAlign: "center" }}>Register</Card.Title>
               <div>
+                <div>
+                <DropdownButton id="dropdown-basic-button" title="Deposit" variant="secondary">
+      <Dropdown.Item href="#/action-1">Savings Account</Dropdown.Item>
+      <Dropdown.Item href="#/action-2">Fixed deposit account</Dropdown.Item>
+      <Dropdown.Item href="#/action-3">Current account</Dropdown.Item>
+    </DropdownButton>
+                </div>
                 <Form.Label htmlFor="basic-url">Username</Form.Label>
                 <InputGroup className="mb-3">
                   <Form.Control
