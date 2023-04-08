@@ -10,12 +10,65 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton'; 
-
+import { useEffect, useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
-
+const userId = 1212312121;
 export default function Home() {
   const router = useRouter();
+  fetch(`http://localhost:8080/account/${userId}`)
+  .then(response => response.json())
+  .then(data => {
+    const account = data.data[0];
+    const username = account.account_name;
+    document.getElementById('dropdown-menu-align-end').textContent = username;
+    });
+
+    const [result, setResult] = useState(null);
+    const [error, setError] = useState(null);
+    const [inputValue, setInputValue] = useState('');
+
+    const handleDeposit = async () => {
+      try {
+        const response = await fetch(`http://localhost:8080/withdraw/${userId}`, {
+          method: 'POST', 
+          headers: {
+            'content-type': 'application/json',
+            //'Access-Control-Allow-Origin': 'http://localhost:8080'
+          },
+          body: JSON.stringify({
+            amount: parseInt(inputValue)
+          })
+        });
+    
+        if (!response.ok) {
+          throw new Error('Withdraw failed');
+        }
+    
+        const data = await response.json();
+        const withdrawInfo = data.data[0];
+        const message = data.message;
+        setResult(
+          <div className="alert alert-success mt-3" role="alert">
+            {message} Your new balance is{" "}
+            <strong>{withdrawInfo.available_balance}</strong> as of{" "}
+            <strong>{withdrawInfo.time}</strong>
+          </div>
+        );
+      
+        setError(null);
+      } catch (error) {
+        setResult(null);
+        setError(error.message);
+      }
+    };
+    
+    
+    
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
   return (
     <div>
       <Head>
@@ -66,13 +119,17 @@ export default function Home() {
                   <Form.Control
                     id="basic-url"
                     aria-describedby="basic-addon3"
+                    value={inputValue}
+                    onChange={handleChange}
                   />
                 </InputGroup>
             
               </div>
-              <Button href="/menu" variant="success" style={{ width: "100%" }}>
+              <Button onClick={handleDeposit} variant="success" style={{ width: "100%" }}>
                 Confirm
               </Button>
+              {result && <p>{result}</p>}
+              {error && <p>Error: {error}</p>}
             </Card.Body>
           </Card>
         </div>
